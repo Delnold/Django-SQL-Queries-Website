@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQL Queries</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}" media="screen">
+</head>
+<body>
+    <h1>SQL Queries</h1>
+    <div class="container">
+        <div class="form-container">
+            <h4>Find top-'n' users by rating <br>(Expects 1 input: {n: int})</h4>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                    <label for="SQL_1">SQL 1:</label>
+                    <input type="text" id="SQL_1" name="SQL_1" required>
+                    <button type="submit" name="button{{ i }}">Submit</button>
+                    <br>
+            </form>
+            <h4>Find stats on champions by 'user_login' <br>(Expects 1 input: {user_login:str})</h4>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                    <label for="SQL_2">SQL 2:</label>
+                    <input type="text" id="SQL_2" name="SQL_2" required>
+                    <button type="submit" name="button{{ i }}">Submit</button>
+                    <br>
+            </form>
+            <h4>Find all users which have winrate over 'x' for champion 'y' <br>(Expects 2 inputs: {x: int, y: str})</h4>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                    <label for="SQL_3">SQL 3:</label>
+                    <input type="text" id="SQL_3" name="SQL_3" required>
+                    <button type="submit" name="button{{ i }}">Submit</button>
+                    <br>
+            </form>
+            <h4>Find all champions that have more than 'n' videos <br>(Expects 1 input: {n: int}))</h4>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                    <label for="SQL_4:">SQL 4:</label>
+                    <input type="text" id="SQL_4" name="SQL_4" required>
+                    <button type="submit" name="button{{ i }}">Submit</button>
+                    <br>
+            </form>
+            <h4>Find all the champions who have at least all the items that champion "x" has <br>(Expects 1 input: {x: str})</h4>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                    <label for="SQL_5">SQL 5:</label>
+                    <input type="text" id="SQL_5" name="SQL_5" required>
+                    <button type="submit" name="button{{ i }}">Submit</button>
+                    <br>
+            </form>
+            <h4>Find the champion whose user "login" in season "x" has the best win rate <br>(Expects 2 input: {login: str, x: int })</h4>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                    <label for="SQL_6">SQL 6:</label>
+                    <input type="text" id="SQL_6" name="SQL_6" required>
+                    <button type="submit" name="button{{ i }}">Submit</button>
+                    <br>
+            </form>
+            <h4>Find user whose is the best on following champion "x" by rating <br>(Expects 1 input: {x: str}</h4>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                    <label for="SQL_7">SQL 7:</label>
+                    <input type="text" id="SQL_7" name="SQL_7" required>
+                    <button type="submit" name="button{{ i }}">Submit</button>
+                    <br>
+            </form>
+            <h4>Find all users stats for each champion limiting by "x" records <br>(Expects 1 input: {x: int}</h4>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                    <label for="SQL_8">SQL 8:</label>
+                    <input type="text" id="SQL_8" name="SQL_8" required>
+                    <button type="submit" name="button{{ i }}">Submit</button>
+                    <br>
+            </form>
+        </div>
+        {% if value %}
+           <textarea id="text-area"style="background: white; font-size: 20px; text-align: center" name="text-area" disabled>{{ value }}</textarea>
+        {% else %}
+            <textarea id="text-area"style="background: white; font-size: 20px; text-align: center" name="text-area" disabled></textarea>
+        {% endif %}
+        </div>
+    <div class="button-row">
+        <a href="/admin/sql_page/champion/add/">
+            <button name="button0">Add Champion!</button>
+        </a>
+        <a href="/admin/sql_page/infoall/add/">
+            <button name="button1">Add InfoAll!</button>
+        </a>
+        <a href="/admin/sql_page/itemschampions/add/">
+            <button name="button2">Add ItemsChampions!</button>
+        </a>
+        <a href="/admin/sql_page/items/add/">
+            <button name="button3">Add Items!</button>
+        </a>
+        <a href="/admin/sql_page/rating/add/">
+            <button name="button4">Add Rating!</button>
+        </a>
+        <a href="/admin/sql_page/statistics/add/">
+            <button name="button5">Add Statistics!</button>
+        </a>
+        <a href="/admin/sql_page/user/add/">
+            <button name="button5">Add User!</button>
+        </a>
+         <a href="/admin/sql_page/video/add/">
+            <button name="button5">Add Videos!</button>
+        </a>
+    </div>
+</body>
+</html>
