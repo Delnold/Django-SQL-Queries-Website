@@ -1,3 +1,5 @@
+import math
+
 from django.db import connection
 from sql_page.input_operations import input_to_list, input_to_int, format_data
 
@@ -5,6 +7,8 @@ def SQL_1(input):
     try:
         with connection.cursor() as cursor:
             list_of_inputs = input_to_int(input_to_list(input, 1))
+            if list_of_inputs[0] < 0:
+                raise ValueError("Number is non-positive")
             cursor.execute("""
             SELECT sql_page_user.login, sql_page_rating.rating
             FROM sql_page_user

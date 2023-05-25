@@ -17,7 +17,7 @@
                     <button type="submit" name="button{{ i }}">Submit</button>
                     <br>
             </form>
-            <h4>Find stats on champions by 'user_login' <br>(Expects 1 input: {user_login:str})</h4>
+            <h4>Find stats on champions by user 'login' <br>(Expects 1 input: {login:str})</h4>
             <form method="post" action="{% url 'index' %}">
                 {% csrf_token %}
                     <label for="SQL_2">SQL 2:</label>
@@ -25,7 +25,7 @@
                     <button type="submit" name="button{{ i }}">Submit</button>
                     <br>
             </form>
-            <h4>Find all users which have winrate over 'x' for champion 'y' <br>(Expects 2 inputs: {x: int, y: str})</h4>
+            <h4>Find all users which have winrate over 'x' for champion 'name' <br>(Expects 2 inputs: {x: int, name: str})</h4>
             <form method="post" action="{% url 'index' %}">
                 {% csrf_token %}
                     <label for="SQL_3">SQL 3:</label>
@@ -41,7 +41,7 @@
                     <button type="submit" name="button{{ i }}">Submit</button>
                     <br>
             </form>
-            <h4>Find all the champions who have at least all the items that champion "x" has <br>(Expects 1 input: {x: str})</h4>
+            <h4>Find all the champions who have at least all the items that champion "name" has <br>(Expects 1 input: {name: str})</h4>
             <form method="post" action="{% url 'index' %}">
                 {% csrf_token %}
                     <label for="SQL_5">SQL 5:</label>
@@ -57,7 +57,7 @@
                     <button type="submit" name="button{{ i }}">Submit</button>
                     <br>
             </form>
-            <h4>Find user whose is the best on following champion "x" by rating <br>(Expects 1 input: {x: str}</h4>
+            <h4>Find user whose is the best on following champion "name" by rating <br>(Expects 1 input: {name: str}</h4>
             <form method="post" action="{% url 'index' %}">
                 {% csrf_token %}
                     <label for="SQL_7">SQL 7:</label>
@@ -81,29 +81,29 @@
         {% endif %}
         </div>
     <div class="button-row">
-        <a href="/admin/sql_page/champion/add/">
-            <button name="button0">Add Champion!</button>
+        <a href="/admin/sql_page/champion/">
+            <button name="button0">Champions!</button>
         </a>
-        <a href="/admin/sql_page/infoall/add/">
-            <button name="button1">Add InfoAll!</button>
+        <a href="/admin/sql_page/infoall/">
+            <button name="button1">InfoAll!</button>
         </a>
-        <a href="/admin/sql_page/itemschampions/add/">
-            <button name="button2">Add ItemsChampions!</button>
+        <a href="/admin/sql_page/itemschampions/">
+            <button name="button2">ItemsChampions!</button>
         </a>
-        <a href="/admin/sql_page/items/add/">
-            <button name="button3">Add Items!</button>
+        <a href="/admin/sql_page/items/">
+            <button name="button3">Items!</button>
         </a>
-        <a href="/admin/sql_page/rating/add/">
-            <button name="button4">Add Rating!</button>
+        <a href="/admin/sql_page/rating/">
+            <button name="button4">Rating!</button>
         </a>
-        <a href="/admin/sql_page/statistics/add/">
-            <button name="button5">Add Statistics!</button>
+        <a href="/admin/sql_page/statistics/">
+            <button name="button5">Statistics!</button>
         </a>
-        <a href="/admin/sql_page/user/add/">
-            <button name="button5">Add User!</button>
+        <a href="/admin/sql_page/user/">
+            <button name="button5">Users!</button>
         </a>
-         <a href="/admin/sql_page/video/add/">
-            <button name="button5">Add Videos!</button>
+         <a href="/admin/sql_page/video/">
+            <button name="button5">Videos!</button>
         </a>
     </div>
 </body>

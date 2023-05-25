@@ -9,7 +9,6 @@ def input_to_int(input) -> list:
         return list(int(value) for value in input)
     except Exception as e:
         raise ValueError("Input contains string characters, integer expected!")
-
 def format_data(columns, rows):
     form_data = ""
 
